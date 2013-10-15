@@ -19,6 +19,9 @@ run_ruby:
 run_python:
 	python python/python.py --kata-redis-pubsub > /dev/null 2>&1 &
 
+run_go:
+	PATH=/data/source/go/bin/ GOROOT=`pwd`/go go run go/go.go > /dev/null 2>1 &
+
 kill:
 
 	pkill -f kata-redis-pubsub
