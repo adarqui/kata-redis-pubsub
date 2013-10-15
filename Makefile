@@ -18,3 +18,7 @@ deps_python:
 
 	sudo apt-get install python-pip
 	pip install redis
+
+deps_ruby:
+	if [ ! `which ruby` ] ; then apt-get install ruby1.9.1 ; fi
+	gem install redis
