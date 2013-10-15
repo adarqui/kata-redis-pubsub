@@ -2,9 +2,13 @@
 
 run:
 
+	make run_nodejs
 	make run_python
 	make run_ruby
 	make run_perl
+
+run_nodejs:
+	node nodejs/node.js --kata-redis-pubsub > /dev/null 2>&1 &
 
 run_perl:
 	perl perl/perl.pl --kata-redis-pubsub > /dev/null 2>&1 &
@@ -22,6 +26,13 @@ kill:
 deps:
 
 	make deps_python
+	make deps_ruby
+	make deps_perl
+	make deps_go
+	make deps_c
+
+deps_nodejs:
+	cd nodejs && npm install redis && npm install hiredis
 
 deps_python:
 
@@ -37,5 +48,4 @@ deps_perl:
 
 deps_go:
 
-deps_nodejs:
-
+deps_c:

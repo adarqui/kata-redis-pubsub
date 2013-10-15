@@ -9,6 +9,7 @@ That's it for this kata experiment.
 
 Currently supported:
 
+	[x] nodejs
 	[x] python
 	[x] ruby
 	[x] perl
