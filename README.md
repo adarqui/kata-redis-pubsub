@@ -7,4 +7,9 @@ Each client is able to:
 
 That's it for this kata experiment.
 
+Currently supported:
+
+	[x] python
+	[x] ruby
+
 pC.
