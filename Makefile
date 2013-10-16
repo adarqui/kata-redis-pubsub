@@ -1,4 +1,4 @@
-# my janky makefile
+# my janky makefile - built for "ubuntu"
 
 run:
 
@@ -20,7 +20,10 @@ run_python:
 	python python/python.py --kata-redis-pubsub > /dev/null 2>&1 &
 
 run_go:
-	PATH=/data/source/go/bin/ GOROOT=`pwd`/go go run go/go.go > /dev/null 2>1 &
+	PATH=/data/source/go/bin/ GOROOT=`pwd`/go go run go/go.go --kata-redis-pubsub > /dev/null 2>&1 &
+
+run_php:
+	php php/php.php --kata-redis-pubsub > /dev/null 2>&1 &
 
 kill:
 
@@ -52,3 +55,10 @@ deps_perl:
 deps_go:
 
 deps_c:
+
+deps_php:
+	apt-get -y install php5
+	apt-get -y install php5-dev
+	git clone https://github.com/nicolasff/phpredis php/phpredis
+	cd php/phpredis && phpize && ./configure && make && make install
+	echo "extension=redis.so" > /etc/php5/conf.d/redis.ini

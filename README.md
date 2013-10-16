@@ -14,5 +14,6 @@ Currently supported:
 	[x] python
 	[x] ruby
 	[x] perl
+	[x] php
 
 pC.
