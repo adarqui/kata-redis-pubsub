@@ -2,3 +2,7 @@
 node_modules
 src
 pkg
+core
+php/phpredis
+c/hiredis
+c/c

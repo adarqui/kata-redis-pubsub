@@ -29,6 +29,13 @@ kill:
 
 	pkill -f kata-redis-pubsub
 
+build:
+	make build_c
+
+
+build_c:
+	gcc c/c.c -lhiredis -I /usr/local/include -o c/c
+
 deps:
 
 	make deps_python
@@ -55,6 +62,8 @@ deps_perl:
 deps_go:
 
 deps_c:
+	git clone https://github.com/redis/hiredis c/hiredis
+	cd c/hiredis && make && make install && ldconfig
 
 deps_php:
 	apt-get -y install php5
